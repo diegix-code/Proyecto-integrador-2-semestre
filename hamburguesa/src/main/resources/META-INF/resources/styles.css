@@ -1,0 +1,20 @@
+/* Fondo general de la página */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 15px;
+}
+
+/* Fondo blanco para los formularios de registro */
+vaadin-form-layout {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Asegurar que las tablas se vean ordenadas */
+vaadin-grid {
+    background: #ffffff;
+    border-radius: 6px;
+}
