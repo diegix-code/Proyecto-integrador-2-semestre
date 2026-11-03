@@ -66,10 +66,11 @@ public class MainView extends VerticalLayout {
 
     Grid<Mesero> grid = new Grid<>(Mesero.class, false);
 
-    grid.addColumn(Mesero::getId).setHeader("ID").setAutoWidth(true);
-    grid.addColumn(Mesero::getNombre).setHeader("Nombre").setAutoWidth(true);
-    grid.addColumn(Mesero::getTelefono).setHeader("Teléfono").setAutoWidth(true);
-    grid.addColumn(Mesero::getTurno).setHeader("Turnos").setAutoWidth(true);
+    grid.addColumn(m -> m.getId()).setHeader("ID").setAutoWidth(true);
+    grid.addColumn(m -> m.getNombre()).setHeader("Nombre").setAutoWidth(true);
+    grid.addColumn(m -> m.getTelefono()).setHeader("Teléfono").setAutoWidth(true);
+    grid.addColumn(m -> m.getTurno()).setHeader("Turnos").setAutoWidth(true);
+
 
     Runnable refrescar = () -> grid.setItems(
         crudService.listarTodos(Mesero.class)
@@ -177,9 +178,9 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, nombreField, descripcionField);
 
         Grid<Categoria> grid = new Grid<>(Categoria.class, false);
-        grid.addColumn(Categoria::getId).setHeader("ID").setAutoWidth(true);
-        grid.addColumn(Categoria::getNombre).setHeader("Nombre").setAutoWidth(true);
-        grid.addColumn(Categoria::getDescripcion).setHeader("Descripción").setAutoWidth(true);
+        grid.addColumn(c -> c.getId()).setHeader("ID").setAutoWidth(true);
+        grid.addColumn(c -> c.getNombre()).setHeader("Nombre").setAutoWidth(true);
+        grid.addColumn(c -> c.getDescripcion()).setHeader("Descripción").setAutoWidth(true);
 
         Runnable refrescar = () -> grid.setItems(crudService.listarTodos(Categoria.class));
         refrescar.run();
@@ -257,12 +258,12 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, nombreField, contactoField, telefonoField, emailField, direccionField);
 
         Grid<Proveedor> grid = new Grid<>(Proveedor.class, false);
-        grid.addColumn(Proveedor::getId).setHeader("ID").setAutoWidth(true);
-        grid.addColumn(Proveedor::getNombre).setHeader("Nombre").setAutoWidth(true);
-        grid.addColumn(Proveedor::getContacto).setHeader("Contacto").setAutoWidth(true);
-        grid.addColumn(Proveedor::getTelefono).setHeader("Teléfono").setAutoWidth(true);
-        grid.addColumn(Proveedor::getEmail).setHeader("Email").setAutoWidth(true);
-        grid.addColumn(Proveedor::getDireccion).setHeader("Dirección").setAutoWidth(true);
+        grid.addColumn(p -> p.getId()).setHeader("ID").setAutoWidth(true);
+        grid.addColumn(p -> p.getNombre()).setHeader("Nombre").setAutoWidth(true);
+        grid.addColumn(p -> p.getContacto()).setHeader("Contacto").setAutoWidth(true);
+        grid.addColumn(p -> p.getTelefono()).setHeader("Teléfono").setAutoWidth(true);
+        grid.addColumn(p -> p.getEmail()).setHeader("Email").setAutoWidth(true);
+        grid.addColumn(p -> p.getDireccion()).setHeader("Dirección").setAutoWidth(true);
 
         Runnable refrescar = () -> grid.setItems(crudService.listarTodos(Proveedor.class));
         refrescar.run();
@@ -354,13 +355,13 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, nombreField, apellidoField, emailField, telefonoField, direccionField, rolField, estadoField);
 
         Grid<Usuario> grid = new Grid<>(Usuario.class, false);
-        grid.addColumn(Usuario::getId).setHeader("ID").setAutoWidth(true);
-        grid.addColumn(Usuario::getNombre).setHeader("Nombre").setAutoWidth(true);
-        grid.addColumn(Usuario::getApellido).setHeader("Apellido").setAutoWidth(true);
-        grid.addColumn(Usuario::getEmail).setHeader("Email").setAutoWidth(true);
-        grid.addColumn(Usuario::getTelefono).setHeader("Teléfono").setAutoWidth(true);
-        grid.addColumn(Usuario::getRol).setHeader("Rol").setAutoWidth(true);
-        grid.addColumn(Usuario::getEstado).setHeader("Estado").setAutoWidth(true);
+        grid.addColumn(u -> u.getId()).setHeader("ID").setAutoWidth(true);
+        grid.addColumn(u -> u.getNombre()).setHeader("Nombre").setAutoWidth(true);
+        grid.addColumn(u -> u.getApellido()).setHeader("Apellido").setAutoWidth(true);
+        grid.addColumn(u -> u.getEmail()).setHeader("Email").setAutoWidth(true);
+        grid.addColumn(u -> u.getTelefono()).setHeader("Teléfono").setAutoWidth(true);
+        grid.addColumn(u -> u.getRol()).setHeader("Rol").setAutoWidth(true);
+        grid.addColumn(u -> u.getEstado()).setHeader("Estado").setAutoWidth(true);
 
         Runnable refrescar = () -> grid.setItems(crudService.listarTodos(Usuario.class));
         refrescar.run();

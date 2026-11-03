@@ -17,6 +17,9 @@ public class Mesero {
     private String telefono;
     private String turno;
 
+    // ===================
+    // Constructores
+    // ===================
     public Mesero() {
     }
 
@@ -26,7 +29,9 @@ public class Mesero {
         this.telefono = telefono;
         this.turno = turno;   
     }
-
+    // ===================
+    // Getters y setters
+    // ===================
     public Long getId() {
         return id;
     }
