@@ -45,7 +45,7 @@ public class MainView extends VerticalLayout {
     }
 
     // ==========================================
-    // 1. MESEROS
+    // 1. MESERO
     // ==========================================
     private Component crearSeccionMeseros() {
     VerticalLayout layout = new VerticalLayout();
